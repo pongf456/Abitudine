@@ -15,7 +15,7 @@ const InputIcon = forwardRef<TextInput, inputIcon>(
       <>
         <View
           className={clsx(
-            "flex-row self-center items-center bg-darkTextPrimary shadow-md",
+            "flex-row self-center px-1 py-2 items-center bg-darkTextPrimary shadow-md",
             className ? className[0] : undefined,
           )}
         >

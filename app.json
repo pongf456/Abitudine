@@ -10,7 +10,8 @@
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash-icon.png",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffffff",
+      "imageWidth": 200
     },
     "ios": {
       "supportsTablet": true
@@ -21,8 +22,10 @@
         "backgroundColor": "#ffffff"
       },
       "permissions": [
+        "android.permission.RECORD_AUDIO",
         "android.permission.RECORD_AUDIO"
-      ]
+      ],
+      "package": "com.yeiderson.Abitudine"
     },
     "web": {
       "bundler": "metro",
@@ -35,7 +38,8 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "imageWidth": 200
         }
       ],
       [
@@ -55,6 +59,12 @@
       "eas": {
         "projectId": "406d4948-8b50-425c-91f2-e8129f39f605"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/406d4948-8b50-425c-91f2-e8129f39f605"
     }
   }
 }
