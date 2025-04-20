@@ -6,7 +6,7 @@ export interface Properties {
 }
 export default function Item({ name, children }: Properties) {
   return (
-    <View className="p-1 flex-row ">
+    <View className="p-2 border-b-[1px] border-textSecondary/10 flex-row items-center">
       <Text className="min-w-[50%] max-w-[60%] text-base font-secondary-medium text-textPrimary">
         {name}
       </Text>

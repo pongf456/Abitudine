@@ -1,4 +1,5 @@
 import AddModal from "@/components/habits/AddModal";
+import DaysSelector from "@/components/habits/DaysSelector";
 import HabitList from "@/components/habits/HabitList";
 import { colors } from "@/constants/Theme";
 import { Entypo } from "@expo/vector-icons";
@@ -7,6 +8,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 export default function Habits() {
   const [addVisible, setAddVisible] = useState(false);
+  const [days, setDays] = useState([0, 1, 2, 3, 4, 5, 6]);
   return (
     <View className="flex-1">
       <View className="flex-row justify-between items-center">
@@ -23,7 +25,8 @@ export default function Habits() {
           </Text>
         </TouchableOpacity>
       </View>
-      <HabitList />
+      <DaysSelector values={days} onChange={setDays} />
+      <HabitList days={days} />
       <AddModal visible={addVisible} hide={() => setAddVisible(false)} />
     </View>
   );

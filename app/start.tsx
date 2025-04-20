@@ -13,6 +13,7 @@ import { router } from "expo-router";
 import * as ImagePicker from "expo-image-picker";
 import { Image } from "react-native";
 import Identities from "@/components/global/Identities";
+import { StatusBar } from "expo-status-bar";
 
 export default function Start() {
   const [boxOpen, setBoxOpen] = useState(false);
@@ -32,11 +33,12 @@ export default function Start() {
 
   return (
     <View className="w-full h-full">
+      <StatusBar style="light" />
       <View
         style={{ paddingTop: top }}
-        className={`bg-accent p-2 rounded-b-[50]`}
+        className={`bg-primary p-2 rounded-b-[50]`}
       >
-        <Text className="font-secondary-bold uppercase text-center text-2xl m-4 text-textPrimary">
+        <Text className="font-secondary-bold uppercase text-center text-2xl m-4 text-darkTextPrimary">
           Formulario de inicio
         </Text>
       </View>
@@ -55,7 +57,7 @@ export default function Start() {
                   if (result.canceled) return;
                   data.field.onChange(result.assets[0].uri);
                 }}
-                className="w-60 h-60 overflow-hidden items-center justify-center bg-accent rounded-full self-center m-2"
+                className="w-60 h-60 overflow-hidden items-center justify-center bg-primary rounded-2xl self-center m-2"
               >
                 {data.field.value ? (
                   <Image
@@ -63,7 +65,7 @@ export default function Start() {
                     source={{ uri: data.field.value }}
                   />
                 ) : (
-                  <Text className="font-secondary-medium text-textPrimary text-center text-xs">
+                  <Text className="font-secondary-medium text-darkTextPrimary text-center text-xs">
                     Selecciona una imagen de perfil
                   </Text>
                 )}
@@ -131,16 +133,16 @@ export default function Start() {
               )}
               <ButtonIcon
                 iconName="calendar"
-                className="bg-accent shadow-md m-4 rounded-xl"
-                color={colors.textPrimary}
+                className="bg-primary shadow-md m-4 rounded-xl"
+                color={colors.darkTextPrimary}
                 size={25}
                 onPress={() => setBoxOpen(!boxOpen)}
               >
                 <View className="  justify-center items-center">
-                  <Text className="font-secondary-bold uppercase text-base text-textPrimary">
+                  <Text className="font-secondary-bold uppercase text-base text-darkTextPrimary">
                     Fecha de nacimiento
                   </Text>
-                  <Text className="font-secondary-regular text-sm m-1 text-textPrimary">
+                  <Text className="font-secondary-regular text-sm m-1 text-darkTextSecondary">
                     {date.toLocaleDateString()}
                   </Text>
                 </View>

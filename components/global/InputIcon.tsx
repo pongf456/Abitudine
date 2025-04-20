@@ -26,7 +26,7 @@ const InputIcon = forwardRef<TextInput, inputIcon>(
             ref={ref}
             {...props}
             className={clsx(
-              "text-base w-[80%] h-full font-secondary-regular",
+              "text-base w-[80%] p-0 h-full font-secondary-regular",
               className ? className[1] : undefined,
             )}
           />

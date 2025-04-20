@@ -11,10 +11,15 @@ export default function Home() {
   const habits = useHabitsStore((store) => store._habits);
   const forToday = useMemo(() => {
     const day = moment().day();
-    return _.filter(habits, (item) => {
+    const filtered = _.filter(habits, (item) => {
       if (_.includes(item.executionDays, day)) return true;
       else return false;
     });
+    return _.orderBy(
+      filtered,
+      (habit) => moment(habit.startDate, "hh:mm A").valueOf(),
+      "asc",
+    );
   }, [habits]);
   return (
     <View className="w-full flex-1">

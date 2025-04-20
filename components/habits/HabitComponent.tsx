@@ -57,10 +57,16 @@ export default function HabitComponent(data: Habit) {
       layout={LinearTransition}
       className="bg-accent rounded-xl my-2 p-1 border-2 border-primary"
     >
-      <Text className="text-center font-secondary-bold text-textPrimary p-1 text-xl">
+      <Text
+        numberOfLines={1}
+        className="text-center font-secondary-bold text-textPrimary py-1 px-4 text-xl"
+      >
         {data.name}
       </Text>
-      <Text className="font-secondary-regular text-sm text-textPrimary p-2">
+      <Text
+        numberOfLines={3}
+        className="font-secondary-regular text-sm text-textPrimary p-2"
+      >
         {data.description}
       </Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>

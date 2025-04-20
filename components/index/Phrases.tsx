@@ -25,7 +25,7 @@ export default function Phrases() {
     <Animated.View
       ref={contentRef}
       layout={started ? LinearTransition.springify().damping(30) : undefined}
-      className="p-2 items-center bg-background rounded-t-xl overflow-hidden"
+      className="p-2 m-4 items-center bg-background rounded-xl overflow-hidden"
     >
       <Logo size={30} />
       <Text className="m-1 font-primary-bold text-sm xs:text-lg  text-primary">

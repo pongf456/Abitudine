@@ -11,7 +11,7 @@ export default function Index() {
         className="w-full h-full flex-1 absolute top-0 left-0"
       />
       <Phrases />
-      <View className="px-12 py-4 bg-background">
+      <View className="px-12 py-4 rounded-t-xl bg-background">
         <Link href="/home" asChild>
           <TouchableOpacity className="bg-primary p-4 rounded-xl">
             <Text className="text-darkTextPrimary text-xs xs:text-base font-secondary-bold text-center">

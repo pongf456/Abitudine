@@ -1,12 +1,22 @@
 import useHabitsStore from "@/hooks/useHabitsStore";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import { FlatList, Text, View } from "react-native";
 import HabitComponent from "./HabitComponent";
-const HabitList = memo(function HabitList() {
+import _ from "lodash";
+import { DaysOfWeek } from "@/types/enums";
+interface Properties {
+  days: DaysOfWeek[];
+}
+const HabitList = memo(function HabitList({ days }: Properties) {
   const { _habits } = useHabitsStore();
-  return _habits && _habits.length !== 0 ? (
+  const data = useMemo(() => {
+    return _.filter(_habits, (habit) => {
+      return _.intersection(habit.executionDays, days).length > 0;
+    });
+  }, [days, _habits]);
+  return data && data.length !== 0 ? (
     <FlatList
-      data={_habits}
+      data={data}
       renderItem={({ item }) => <HabitComponent {...item} />}
       keyExtractor={(item) => item.startedDate}
       contentContainerStyle={{ flexGrow: 1, padding: 16 }} // Ajusta el padding según necesites
