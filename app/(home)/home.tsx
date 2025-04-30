@@ -1,4 +1,4 @@
-import Title from "@/components/home/Title";
+import Title from "@/components/global/Title";
 import useHabitsStore from "@/hooks/useHabitsStore";
 import { useMemo } from "react";
 import { View, Text, FlatList } from "react-native";
@@ -7,13 +7,13 @@ import moment from "moment";
 import HabitPreview from "@/components/home/HabitPreview";
 import Carrousel from "@/components/global/Carrousel";
 import Timer from "@/components/home/Timer";
+import { HabitUtils } from "@/utils/habit";
 export default function Home() {
   const habits = useHabitsStore((store) => store._habits);
   const forToday = useMemo(() => {
     const day = moment().day();
     const filtered = _.filter(habits, (item) => {
-      if (_.includes(item.executionDays, day)) return true;
-      else return false;
+      return HabitUtils.includesTheseDays(item.executionDays, [day]);
     });
     return _.orderBy(
       filtered,
@@ -45,7 +45,7 @@ export default function Home() {
       <Title title="Pomodoro" className={["px-1"]}>
         <Carrousel titles={["Concentración", "Descanso"]} className="h-80">
           <Timer time="00:15:00" />
-          <Timer time="00:5:00" />
+          <Timer time="00:05:00" />
         </Carrousel>
       </Title>
     </View>

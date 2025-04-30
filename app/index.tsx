@@ -19,6 +19,11 @@ export default function Index() {
             </Text>
           </TouchableOpacity>
         </Link>
+        <Link href="/privacy" className="self-center p-2">
+          <Text className="font-secondary-regular text-textPrimary">
+            Política de privacidad
+          </Text>
+        </Link>
       </View>
     </View>
   );

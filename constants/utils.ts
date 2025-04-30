@@ -1,12 +1,7 @@
 import * as Notifications from "expo-notifications";
 import { Habit } from "@/types/interfaces";
 import moment from "moment";
-export const generateColor = () => {
-  const CHHAPOLA = Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, "0");
-  return `#${CHHAPOLA}`;
-};
+
 export const difficultyTranslations = {
   Easy: "Fácil",
   Medium: "Normal",

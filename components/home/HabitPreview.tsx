@@ -1,7 +1,7 @@
 import { Habit } from "@/types/interfaces";
+import { HabitUtils } from "@/utils/habit";
 import { router } from "expo-router";
-import moment from "moment";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 export default function HabitPreview({
   name,
@@ -10,16 +10,15 @@ export default function HabitPreview({
   startedDate,
   endDate,
 }: Habit) {
-  const now = useMemo(() => moment(), []);
-  const startMoment = useMemo(() => moment(startDate, "hh:mm A"), [startDate]);
-  const textTime = useMemo(() => {
-    const diferencia = moment.duration(startMoment.diff(now));
-    const horas = diferencia.hours();
-    const minutos = diferencia.minutes();
-    if (diferencia.asMilliseconds() >= 0) {
-      return `${horas} hora${horas === 1 ? "" : "s"} y ${minutos} minuto${minutos === 1 ? "" : "s"}`;
-    } else return "Ya pasó";
-  }, [now, startMoment]);
+  const [textTime, setTextTime] = useState(
+    HabitUtils.getStatus(startDate, endDate),
+  );
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTextTime(HabitUtils.getStatus(startDate, endDate));
+    }, 30000);
+    return () => clearInterval(interval);
+  }, [startDate, endDate]);
   return (
     <TouchableOpacity
       onPress={() => router.push(`/habits/${startedDate}`)}

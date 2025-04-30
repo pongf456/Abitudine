@@ -3,10 +3,14 @@ import { View, Text, Modal, TouchableOpacity, ViewProps } from "react-native";
 import InputIcon from "../global/InputIcon";
 import ButtonIcon from "./ButtonIcon";
 import { colors } from "@/constants/Theme";
-import Animated, { LinearTransition } from "react-native-reanimated";
-import { AntDesign } from "@expo/vector-icons";
-const AnimatedTouchableOpacity =
-  Animated.createAnimatedComponent(TouchableOpacity);
+import Animated, {
+  LinearTransition,
+  ZoomIn,
+  ZoomOut,
+} from "react-native-reanimated";
+import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import AnimatedTouchableOpacity from "./AnimatedTouchableOpacity";
+import Title from "./Title";
 export default function Identities({
   value,
   onChange,
@@ -79,39 +83,47 @@ export default function Identities({
           </View>
         </View>
       </Modal>
-      <Text className="m-2 font-secondary-bold text-center uppercase text-lg text-textPrimary text">
-        ¿Cómo te identificas?
-      </Text>
-      {error && (
-        <Text className="my-2 font-secondary-regular text-center text-xs text-textPrimary">
-          Es necesario añadir las cualidades que poseas.
-        </Text>
-      )}
-      <View className="flex-row flex-wrap gap-y-2 items-center justify-center">
-        {value.map((identity, index) => (
+      <Title center title="¿Cómo te identificas?" className={["gap-2"]}>
+        {error && (
+          <Text className="my-2 font-secondary-regular text-center text-xs text-textPrimary">
+            Es necesario añadir las cualidades que poseas.
+          </Text>
+        )}
+        <View className="flex-row flex-wrap gap-y-2 items-center justify-center">
+          {value.map((identity, index) => (
+            <Animated.View
+              layout={LinearTransition}
+              entering={ZoomIn}
+              exiting={ZoomOut}
+              key={index}
+              className="px-2 h-10 flex-row gap-1 bg-primary rounded-xl items-center justify-center mx-2"
+            >
+              <Text className="font-secondary-regular text-xs text-background">
+                {identity}
+              </Text>
+              <TouchableOpacity onPress={() => removeIdentity(identity)}>
+                <MaterialIcons
+                  size={15}
+                  color={colors.background}
+                  name="close"
+                />
+              </TouchableOpacity>
+            </Animated.View>
+          ))}
           <AnimatedTouchableOpacity
-            onPress={() => removeIdentity(identity)}
             layout={LinearTransition}
-            key={index}
-            className="px-2 h-10 bg-primary rounded-xl items-center justify-center mx-2"
+            onPress={toggleModal}
+            className="w-10 h-10 mx-2 bg-primary rounded-xl items-center justify-center"
           >
-            <Text className="font-secondary-regular text-xs text-background">
-              {identity}
-            </Text>
+            <AntDesign
+              name="plus"
+              size={20}
+              className="text-sm"
+              color={colors.background}
+            />
           </AnimatedTouchableOpacity>
-        ))}
-        <TouchableOpacity
-          onPress={toggleModal}
-          className="w-10 h-10 mx-2 bg-primary rounded-xl items-center justify-center"
-        >
-          <AntDesign
-            name="plus"
-            size={20}
-            className="text-sm"
-            color={colors.background}
-          />
-        </TouchableOpacity>
-      </View>
+        </View>
+      </Title>
     </View>
   );
 }

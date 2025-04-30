@@ -15,7 +15,7 @@ export default function Phrases() {
   const [started, setStarted] = useState(false);
   useEffect(() => {
     setStarted(true);
-    const interval = setInterval(() => setPhrase(changePhrase), 5000);
+    const interval = setInterval(() => setPhrase(changePhrase), 10000);
     return () => {
       clearInterval(interval);
     };
@@ -34,7 +34,7 @@ export default function Phrases() {
       <Text className="m-1 text-center font-primary-semibold text-sm xs:text-lg  text-primary">
         {phrase.frase}
       </Text>
-      <Text className="m-1 font-primary-regular text-sm xs:text-lg  text-primary">
+      <Text className="m-1 font-primary-regular text-sm xs:text-lg text-center  text-primary">
         -{phrase.libro}-
       </Text>
     </Animated.View>

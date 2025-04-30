@@ -4,6 +4,7 @@ import { FlatList, Text, View } from "react-native";
 import HabitComponent from "./HabitComponent";
 import _ from "lodash";
 import { DaysOfWeek } from "@/types/enums";
+import { HabitUtils } from "@/utils/habit";
 interface Properties {
   days: DaysOfWeek[];
 }
@@ -11,7 +12,7 @@ const HabitList = memo(function HabitList({ days }: Properties) {
   const { _habits } = useHabitsStore();
   const data = useMemo(() => {
     return _.filter(_habits, (habit) => {
-      return _.intersection(habit.executionDays, days).length > 0;
+      return HabitUtils.includesTheseDays(habit.executionDays, days);
     });
   }, [days, _habits]);
   return data && data.length !== 0 ? (

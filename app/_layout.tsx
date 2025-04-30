@@ -62,6 +62,7 @@ export default function RootLayout() {
         >
           <Stack.Screen name="index" />
           <Stack.Screen name="start" />
+          <Stack.Screen name="privacy" />
           <Stack.Screen name="(home)" />
         </Stack>
       </GestureHandlerRootView>

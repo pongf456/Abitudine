@@ -12,13 +12,24 @@ interface inputIcon extends Omit<TextInputProps, "className"> {
 const InputIcon = forwardRef<TextInput, inputIcon>(
   ({ iconName, className, error, ...props }, ref) => {
     return (
-      <>
-        <View
-          className={clsx(
-            "flex-row self-center px-1 py-2 items-center bg-darkTextPrimary shadow-md",
-            className ? className[0] : undefined,
-          )}
-        >
+      <View
+        className={clsx(
+          "bg-darkTextPrimary shadow-md",
+          className ? className[0] : undefined,
+        )}
+      >
+        {error && (
+          <Text
+            numberOfLines={1}
+            className={clsx(
+              "font-secondary-regular mx-2 text-xs text-textPrimary",
+              className ? className[2] : undefined,
+            )}
+          >
+            {error}
+          </Text>
+        )}
+        <View className="flex-row self-center px-1 py-2 items-center">
           <View className="w-[20%] items-center justify-center">
             <AntDesign name={iconName} size={25} color={colors.textPrimary} />
           </View>
@@ -31,17 +42,7 @@ const InputIcon = forwardRef<TextInput, inputIcon>(
             )}
           />
         </View>
-        {error && (
-          <Text
-            className={clsx(
-              "font-secondary-regular text-xs text-textPrimary",
-              className ? className[2] : undefined,
-            )}
-          >
-            {error}
-          </Text>
-        )}
-      </>
+      </View>
     );
   },
 );

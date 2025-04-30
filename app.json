@@ -45,7 +45,14 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "La requiere el acceso a tus fotos."
+          "photosPermission": "La aplicación requiere el acceso a tus fotos."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/push-icon.png",
+          "enableBackgroundRemoteNotifications": false
         }
       ]
     ],

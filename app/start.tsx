@@ -36,7 +36,7 @@ export default function Start() {
       <StatusBar style="light" />
       <View
         style={{ paddingTop: top }}
-        className={`bg-primary p-2 rounded-b-[50]`}
+        className={`bg-primary p-2 rounded-b-3xl`}
       >
         <Text className="font-secondary-bold uppercase text-center text-2xl m-4 text-darkTextPrimary">
           Formulario de inicio
@@ -57,7 +57,7 @@ export default function Start() {
                   if (result.canceled) return;
                   data.field.onChange(result.assets[0].uri);
                 }}
-                className="w-60 h-60 overflow-hidden items-center justify-center bg-primary rounded-2xl self-center m-2"
+                className="w-60 h-60 overflow-hidden items-center justify-center bg-primary rounded-3xl self-center m-1"
               >
                 {data.field.value ? (
                   <Image
@@ -133,7 +133,7 @@ export default function Start() {
               )}
               <ButtonIcon
                 iconName="calendar"
-                className="bg-primary shadow-md m-4 rounded-xl"
+                className="bg-primary shadow-md my-0.5 mx-4 rounded-xl"
                 color={colors.darkTextPrimary}
                 size={25}
                 onPress={() => setBoxOpen(!boxOpen)}

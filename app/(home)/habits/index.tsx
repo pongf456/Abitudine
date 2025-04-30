@@ -2,7 +2,7 @@ import AddModal from "@/components/habits/AddModal";
 import DaysSelector from "@/components/habits/DaysSelector";
 import HabitList from "@/components/habits/HabitList";
 import { colors } from "@/constants/Theme";
-import { Entypo } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
@@ -19,7 +19,7 @@ export default function Habits() {
           onPress={() => setAddVisible(true)}
           className="self-end flex-row m-2 p-2 items-center gap-2 rounded-md bg-primary"
         >
-          <Entypo color={colors.accent} size={25} name="add-to-list" />
+          <MaterialIcons color={colors.background} size={25} name="add" />
           <Text className="font-secondary-regular text-darkTextPrimary text-sm">
             Añadir hábito
           </Text>
@@ -27,7 +27,12 @@ export default function Habits() {
       </View>
       <DaysSelector values={days} onChange={setDays} />
       <HabitList days={days} />
-      <AddModal visible={addVisible} hide={() => setAddVisible(false)} />
+      <AddModal
+        visible={addVisible}
+        hide={() => {
+          setAddVisible(false);
+        }}
+      />
     </View>
   );
 }

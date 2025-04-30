@@ -1,5 +1,5 @@
 import useHabitsStore from "@/hooks/useHabitsStore";
-import { useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { ReactNode, useEffect, useMemo, useState } from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import _ from "lodash";
@@ -9,7 +9,7 @@ import { Picker } from "@react-native-picker/picker";
 import DaysSelector from "@/components/habits/DaysSelector";
 import IdentitySelector from "@/components/habits/IdentitySelector";
 import DateSelector from "@/components/habits/DateSelector";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 import { colors } from "@/constants/Theme";
 import { Controller, useForm } from "react-hook-form";
 import { habitSchema, notesSchema } from "@/constants/schemas";
@@ -105,7 +105,7 @@ function Notes({
           }}
           className="p-2 mx-1 bg-primary rounded-xl"
         >
-          <AntDesign name="save" size={20} color={colors.accent} />
+          <MaterialIcons name="save" size={20} color={colors.background} />
         </TouchableOpacity>
       </View>
       {error && (
@@ -131,6 +131,27 @@ export default function Habit() {
   const lastStartDate = watch("startDate");
   return (
     <View className="flex-1 items-center justify-center relative">
+      <View className="flex-row items-center w-full justify-between">
+        <TouchableOpacity
+          onPress={() => router.push("/habits")}
+          className="bg-primary items-center px-2 py-1 justify-center flex-row gap-2 m-2 rounded-xl"
+        >
+          <MaterialIcons
+            size={25}
+            color={colors.darkTextPrimary}
+            name="arrow-back-ios"
+          />
+          <Text className="font-secondary-medium text-darkTextPrimary">
+            Regresar
+          </Text>
+        </TouchableOpacity>
+        <Text className=" font-secondary-regular text-center mx-2 text-textPrimary text-base">
+          {(data?.startedDate
+            ? new Date(data.startedDate)
+            : new Date()
+          ).toLocaleString()}
+        </Text>
+      </View>
       {!data ? (
         <Text className="font-secondary-bold text-textPrimary">
           Hábito no encontrado.
@@ -261,9 +282,6 @@ export default function Habit() {
                 )}
               />
             </View>
-            <Text className="absolute bottom-2 right-2 font-secondary-regular text-textSecondary text-base">
-              {new Date(data.startedDate).toLocaleString()}
-            </Text>
           </ScrollView>
         </>
       )}
