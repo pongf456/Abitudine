@@ -24,18 +24,21 @@ export default function Account() {
   const data = useMemo(() => {
     const habitsCountByDay = HabitUtils.countHabitsByDay(habits);
     const daysOrder: DaysOfWeek[] = [
+      DaysOfWeek.Sunday,
       DaysOfWeek.Monday,
       DaysOfWeek.Tuesday,
       DaysOfWeek.Wednesday,
       DaysOfWeek.Thursday,
       DaysOfWeek.Friday,
       DaysOfWeek.Saturday,
-      DaysOfWeek.Sunday,
     ];
 
     const formattedHabitsByDay: DayHabitCount[] = daysOrder.map((day) => {
       let dayName = "";
       switch (day) {
+        case DaysOfWeek.Sunday:
+          dayName = "D";
+          break;
         case DaysOfWeek.Monday:
           dayName = "L";
           break;
@@ -53,9 +56,6 @@ export default function Account() {
           break;
         case DaysOfWeek.Saturday:
           dayName = "S";
-          break;
-        case DaysOfWeek.Sunday:
-          dayName = "D";
           break;
         default:
           dayName = "";

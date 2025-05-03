@@ -41,13 +41,13 @@ const Day = memo(function Day(properties: SecondProperties) {
 const DaysViewer = memo(function DaysSelector(v: Properties) {
   return (
     <View className="w-full flex-row gap-2 p-2 justify-around">
+      <Day {...v} title="D" value={DaysOfWeek.Sunday} />
       <Day {...v} title="L" value={DaysOfWeek.Monday} />
       <Day {...v} title="M" value={DaysOfWeek.Tuesday} />
       <Day {...v} title="M" value={DaysOfWeek.Wednesday} />
       <Day {...v} title="J" value={DaysOfWeek.Thursday} />
       <Day {...v} title="V" value={DaysOfWeek.Friday} />
       <Day {...v} title="S" value={DaysOfWeek.Saturday} />
-      <Day {...v} title="D" value={DaysOfWeek.Sunday} />
     </View>
   );
 });

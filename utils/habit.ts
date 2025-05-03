@@ -33,13 +33,13 @@ export class HabitUtils {
   }
   static countHabitsByDay(habits: Habit[]): Record<DaysOfWeek, number> {
     const counts: Record<DaysOfWeek, number> = {
+      [DaysOfWeek.Sunday]: 0,
       [DaysOfWeek.Monday]: 0,
       [DaysOfWeek.Tuesday]: 0,
       [DaysOfWeek.Wednesday]: 0,
       [DaysOfWeek.Thursday]: 0,
       [DaysOfWeek.Friday]: 0,
       [DaysOfWeek.Saturday]: 0,
-      [DaysOfWeek.Sunday]: 0,
     };
 
     habits.forEach((habit) => {

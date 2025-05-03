@@ -11,7 +11,7 @@ import { HabitUtils } from "@/utils/habit";
 export default function Home() {
   const habits = useHabitsStore((store) => store._habits);
   const forToday = useMemo(() => {
-    const day = moment().day();
+    const day = moment().days();
     const filtered = _.filter(habits, (item) => {
       return HabitUtils.includesTheseDays(item.executionDays, [day]);
     });
