@@ -18,6 +18,7 @@ export interface Habit extends Pick<User, "identity"> {
   difficulty: (typeof DifficultyLevel)[number]; // Dificultad
   startedDate: string; // La fecha en la que se empezó
   executionDays: DaysOfWeek[]; // Los días en los que se ejecuta
+  daysCompleted: string[];
   startDate: string; // Cuando inicia en el día
   endDate: string; // Cuando termina en el día
   notes: Note[]; // Notas

@@ -88,6 +88,7 @@ export const habitSchema = z.object({
     required_error: "Los días de ejecución son necesarios.",
     invalid_type_error: "Los días de ejecución son inválidos.",
   }),
+  daysCompleted: z.array(z.string()),
   startDate: HHMMSchema,
   endDate: HHMMSchema,
 });

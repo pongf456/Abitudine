@@ -24,6 +24,7 @@ export default function AddModal({ hide, visible }: Properties) {
       startDate: `${moment().format("hh:mm A")}`,
       endDate: `${moment().add(10, "minutes").format("hh:mm A")}`,
       executionDays: [0, 1, 2, 3, 4, 5, 6],
+      daysCompleted: [],
     },
     resolver: zodResolver(habitSchema),
   });
@@ -51,6 +52,7 @@ export default function AddModal({ hide, visible }: Properties) {
                 <InputIcon
                   error={error?.message}
                   onChangeText={onChange}
+                  numberOfLines={1}
                   {...others}
                   iconName="infocirlce"
                   placeholder="Nombre"

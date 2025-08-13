@@ -16,6 +16,7 @@ import { habitSchema, notesSchema } from "@/constants/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Animated, { FadeInRight, FadeOutLeft } from "react-native-reanimated";
+import Completed from "@/components/habits/Completed";
 
 const joinedSchema = habitSchema.extend({
   notes: notesSchema,
@@ -174,6 +175,7 @@ export default function Habit() {
             </TouchableAnimated>
           )}
           <ScrollView className="flex-1 p-2">
+            <Completed habit={data} />
             <Controller
               control={control}
               name="name"
