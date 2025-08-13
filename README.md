@@ -1,102 +1,79 @@
-# Welcome to your Expo app 👋
+0,0 @@
 
-# Abitudine | Rastreador de Hábitos
+# Abitudine  Habits App 🚀
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
-`Expo` `React Native` `TypeScript` `NativeWind` `Zustand`
 
-## Get started
+**Abitudine** es una aplicación móvil multiplataforma, diseñada con esmero para ayudarte a construir, seguir y mantener hábitos positivos en tu día a día. Su interfaz limpia y motivadora te acompaña en el camino hacia tus metas personales.
 
-**Abitudine** es una aplicación móvil moderna y elegante, diseñada para ayudarte a construir, rastrear y mantener hábitos positivos en tu día a día. Con una interfaz intuitiva y potentes funcionalidades, Abitudine es tu compañero ideal para el desarrollo personal.
-
-1. Install dependencies
-
-## 📸 Capturas de Pantalla
-
-   ```bash
-   npm install
-   ```
-
-*(Aquí puedes agregar capturas de pantalla de la aplicación)*
-
-2. Start the app
-| Pantalla de Inicio | Progreso del Hábito | Estadísticas |
-| :----------------: | :--------------------: | :----------: |
-|      *(img 1)*       |        *(img 2)*         |   *(img 3)*    |
-
-   ```bash
-    npx expo start
-   ```
+Este proyecto fue desarrollado como una pieza central de mi portafolio, demostrando habilidades en el desarrollo de aplicaciones móviles modernas con React Native y Expo.
 
 ## ✨ Características Principales
 
-In the output, you'll find options to open the app in a
+- **Creación de Hábitos Personalizados**: Define tus propios hábitos, establece metas, elige colores y añade iconos para una experiencia única.
+- **Seguimiento Visual del Progreso**: Monitorea tu avance con calendarios y gráficos intuitivos que te motivan a no romper la cadena.
+- **Recordatorios y Notificaciones**: Configura notificaciones inteligentes para no olvidar nunca tus hábitos.
+- **Interfaz Limpia y Minimalista**: Una experiencia de usuario fluida y sin distracciones, centrada en lo que de verdad importa: tu progreso.
+- **Soporte Multiplataforma**: Funciona de manera nativa en iOS y Android desde una única base de código.
 
-- **Creación de Hábitos Personalizados:** Define tus propios hábitos, establece metas y elige la frecuencia (diaria, semanal, etc.).
-- **Seguimiento Intuitivo:** Marca tus hábitos como completados con un simple toque.
-- **Visualización de Progreso:** Analiza tu constancia con gráficos y estadísticas detalladas que te motivarán a seguir adelante.
-- **Recordatorios Inteligentes:** Configura notificaciones para no olvidar nunca tus compromisos.
-- **Interfaz Limpia y Atractiva:** Una experiencia de usuario fluida y agradable, construida con NativeWind.
-- **Multiplataforma:** Disponible para dispositivos iOS y Android gracias a Expo.
-
-- development build
-- Android emulator
-- iOS simulator
-- Expo Go, a limited sandbox for trying out app development with Expo
+---
 
 ## 🛠️ Stack Tecnológico
 
-You can start developing by editing the files inside the **app** directory. This project uses file-based routing.
-Este proyecto está construido con tecnologías modernas para ofrecer una experiencia de desarrollo y de usuario de primer nivel.
+Este proyecto fue construido utilizando un stack de tecnologías moderno y robusto, enfocado en la productividad y la calidad del código.
 
-## Get a fresh project
+- **Framework**: [React Native](https://reactnative.dev/) con [Expo](https://expo.dev/) (SDK 52)
+- **Lenguaje**: [TypeScript](https://www.typescriptlang.org/)
+- **Navegación**: [Expo Router v4](https://docs.expo.dev/router/introduction/) (Navegación basada en archivos)
+- **Gestión de Estado**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Estilos**: [NativeWind v4](https://www.nativewind.dev/) (Tailwind CSS para React Native)
+- **Manejo de Formularios**: [React Hook Form](https://react-hook-form.com/)
+- **Validación de Esquemas**: [Zod](https://zod.dev/)
+- **Visualización de Datos**: [React Native Gifted Charts](https://github.com/Abhinandan-Kushwaha/react-native-gifted-charts)
+- **Almacenamiento Local**: [@react-native-async-storage/async-storage](https://react-native-async-storage.github.io/async-storage/)
+- **Linting y Formateo**: ESLint y Prettier
 
-- **Framework:** React Native con Expo
-- **Lenguaje:** TypeScript
-- **Navegación:** Expo Router (Navegación basada en archivos con rutas tipadas)
-- **Estilos:** NativeWind (Tailwind CSS para React Native)
-- **Gestión de Estado:** Zustand
-- **Manejo de Formularios:** React Hook Form con Zod para validación de esquemas.
-- **Almacenamiento Local:** AsyncStorage
-- **Gráficos:** React Native Gifted Charts
-- **Linting & Formato:** ESLint y Prettier
+### Estructura del Proyecto
 
-When you're ready, run:
+El proyecto sigue una estructura organizada y escalable, aprovechando las convenciones de Expo Router para la navegación.
+
+```
+Abitudine/
+├── app/                # Directorio principal de Expo Router
+│   ├── (tabs)/         # Layout para la navegación por pestañas
+│   │   ├── _layout.tsx # Definición del layout de las pestañas
+│   │   ├── index.tsx   # Pantalla de inicio
+│   │   └── ...         # Otras pantallas dentro de las pestañas
+│   ├── _layout.tsx     # Layout raíz de la aplicación
+│   └── index.tsx       # Punto de entrada de la app
+├── assets/             # Fuentes, imágenes e iconos
+├── components/         # Componentes reutilizables de la UI
+├── constants/          # Constantes (colores, temas, etc.)
+├── hooks/              # Hooks personalizados
+├── lib/                # Utilidades y lógica de negocio
+├── scripts/            # Scripts de utilidad para el proyecto
+└── ...                 # Otros archivos de configuración (app.json, tailwind.config.js, etc.)
+```
+
+---
 
 ## 🚀 Cómo Empezar
 
-```bash
-npm run reset-project
-```
-
-Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno de desarrollo local.
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Sigue estos pasos para ejecutar el proyecto en tu entorno de desarrollo local.
 
 ### Prerrequisitos
 
-## Learn more
+- Node.js (versión 18 o superior)
+- Yarn o npm
+- [Expo Go](https://expo.dev/go) en tu dispositivo móvil (iOS o Android) o un emulador configurado.
 
-- Node.js (versión LTS recomendada)
-- `npm` o `yarn`
-- `Expo CLI`: `npm install -g expo-cli`
-- Un emulador de Android/iOS o un dispositivo físico con la app Expo Go.
+### Instalación
 
-To learn more about developing your project with Expo, look at the following resources:
-
-### Instalación y Ejecución
-
-- Expo documentation: Learn fundamentals, or go into advanced topics with our guides.
-- Learn Expo tutorial: Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-1. **Clona el repositorio (si aplica):**
+1. **Clona el repositorio:**
 
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
+    git clone https://github.com/tu-usuario/Abitudine.git
     cd Abitudine
     ```
-
-## Join the community
 
 2. **Instala las dependencias:**
 
@@ -104,55 +81,48 @@ To learn more about developing your project with Expo, look at the following res
     npm install
     ```
 
-Join our community of developers creating universal apps.
-3.  **Inicia el servidor de desarrollo de Expo:**
+    o si usas Yarn:
+
     ```bash
-    npx expo start
+    yarn install
     ```
 
-- Expo on GitHub: View our open source platform and contribute.
-- Discord community: Chat with Expo users and ask questions.
-Esto abrirá el DevTools de Expo en tu navegador. Desde allí, puedes:
-- Escanear el código QR con la app `Expo Go` en tu dispositivo iOS o Android.
-- Presionar `a` para abrir en un emulador de Android.
-- Presionar `i` para abrir en un simulador de iOS.
+### Ejecución del Proyecto
 
-## 📁 Estructura del Proyecto
+1. **Inicia el servidor de desarrollo de Expo:**
 
-El proyecto utiliza la estructura de carpetas recomendada por `Expo Router` para una organización clara y escalable.
+    ```bash
+    npm start
+    ```
 
-```
-Abitudine/
-├── app/              # Contiene todas las rutas y pantallas de la aplicación.
-│   ├── (tabs)/       # Layout para la navegación por pestañas.
-│   ├── _layout.tsx   # Layout principal de la aplicación.
-│   └── index.tsx     # Pantalla de inicio.
-├── assets/           # Fuentes, imágenes y otros recursos estáticos.
-├── components/       # Componentes reutilizables de la UI (botones, inputs, etc.).
-├── constants/        # Constantes globales (colores, estilos, dimensiones).
-├── hooks/            # Hooks personalizados (ej. useAuth, useHabits).
-├── lib/              # Funciones de utilidad y helpers (ej. formateo de fechas).
-├── store/            # Configuración del store de Zustand para el estado global.
-└── ...               # Otros archivos de configuración (babel, tailwind, etc.).
-```
+2. **Abre la aplicación:**
+    - **En iOS:** Escanea el código QR con la cámara de tu iPhone o la app Expo Go.
+    - **En Android:** Escanea el código QR con la app Expo Go.
+    - **En la web:** Presiona `w` en la terminal una vez que el servidor de desarrollo esté corriendo.
 
-## 📜 Scripts Disponibles
+### Scripts Disponibles
 
-En el archivo `package.json`, encontrarás varios scripts para facilitar el desarrollo:
+En el archivo `package.json` encontrarás los siguientes scripts:
 
 - `npm start`: Inicia el servidor de desarrollo de Expo.
-- `npm run android`: Inicia la aplicación en un emulador/dispositivo Android conectado.
-- `npm run ios`: Inicia la aplicación en un simulador/dispositivo iOS conectado.
-- `npm run web`: Inicia la aplicación en un navegador web.
-- `npm run lint`: Ejecuta ESLint para analizar el código en busca de errores y problemas de estilo.
-- `npm run test`: Ejecuta las pruebas unitarias con Jest.
+- `npm run android`: Inicia la app en un emulador o dispositivo Android.
+- `npm run ios`: Inicia la app en un simulador o dispositivo iOS.
+- `npm run web`: Inicia la app en un navegador web.
+- `npm run lint`: Ejecuta el linter (ESLint) para verificar la calidad del código.
+- `npm test`: Ejecuta las pruebas con Jest.
 
-## 🤝 Contribuciones
+---
 
-Las contribuciones son bienvenidas. Si deseas mejorar Abitudine, por favor, sigue estos pasos:
+## 📄 Licencia
 
-1. Haz un `Fork` del proyecto.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz `commit` (`git commit -m 'Añade nueva funcionalidad'`).
-4. Haz `push` a la rama (`git push origin feature/nueva-funcionalidad`).
-5. Abre un `Pull Request`.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+## 👤 Contacto
+
+**Email**: <adonayyeidersonparedes@gmail.com>
+
+- **GitHub**: @pongf456
+
+¡Gracias por visitar mi proyecto!
