@@ -1,5 +1,3 @@
-0,0 @@
-
 # Abitudine  Habits App 🚀
 
 
@@ -110,12 +108,6 @@ En el archivo `package.json` encontrarás los siguientes scripts:
 - `npm run web`: Inicia la app en un navegador web.
 - `npm run lint`: Ejecuta el linter (ESLint) para verificar la calidad del código.
 - `npm test`: Ejecuta las pruebas con Jest.
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
 ---
 
